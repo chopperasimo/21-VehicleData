@@ -336,72 +336,72 @@
             <div class="checkbox-group">
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="bodyCheck" value="平">
+                    <input type="checkbox" name="body" value="平">
                     平
                 </label>
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="bodyCheck" value="アルミ">
+                    <input type="checkbox" name="body" value="アルミ">
                     アルミ
                 </label>
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="bodyCheck" value="ウイング">
+                    <input type="checkbox" name="body" value="ウイング">
                     ウイング
                 </label>
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="bodyCheck" value="積載車">
+                    <input type="checkbox" name="body" value="積載車">
                     積載車
                 </label>
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="bodyCheck" value="ダンプ">
+                    <input type="checkbox" name="body" value="ダンプ">
                     ダンプ
                 </label>
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="bodyCheck" value="ローダーダンプ">
+                    <input type="checkbox" name="body" value="ローダーダンプ">
                     ローダーダンプ
                 </label>
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="bodyCheck" value="クレーン">
+                    <input type="checkbox" name="body" value="クレーン">
                     クレーン
                 </label>
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="bodyCheck" value="ダブルキャブ">
+                    <input type="checkbox" name="body" value="ダブルキャブ">
                     ダブルキャブ
                 </label>
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="bodyCheck" value="ショート">
+                    <input type="checkbox" name="body" value="ショート">
                     ショート
                 </label>
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="bodyCheck" value="セミロング">
+                    <input type="checkbox" name="body" value="セミロング">
                     セミロング
                 </label>
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="bodyCheck" value="ロング">
+                    <input type="checkbox" name="body" value="ロング">
                     ロング
                 </label>
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="bodyCheck" value="ワイド">
+                    <input type="checkbox" name="body" value="ワイド">
                     ワイド
                 </label>
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="bodyCheck" value="ローキャブ">
+                    <input type="checkbox" name="body" value="ローキャブ">
                     ローキャブ
                 </label>
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="bodyCheck" value="ハイキャブ">
+                    <input type="checkbox" name="body" value="ハイキャブ">
                     ハイキャブ
                 </label>
 
@@ -420,32 +420,32 @@
             <div class="checkbox-group">
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="optionCheck" value="PG">
+                    <input type="checkbox" name="option" value="PG">
                     PG
                 </label>
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="optionCheck" value="コボレーン">
+                    <input type="checkbox" name="option" value="コボレーン">
                     コボレーン
                 </label>
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="optionCheck" value="メッキ">
+                    <input type="checkbox" name="option" value="メッキ">
                     メッキ
                 </label>
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="optionCheck" value="電動サイド">
+                    <input type="checkbox" name="option" value="電動サイド">
                     電動サイド
                 </label>
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="optionCheck" value="フォグ">
+                    <input type="checkbox" name="option" value="フォグ">
                     フォグ
                 </label>
 
                 <label class="checkbox-item">
-                    <input type="checkbox" name="optionCheck" value="フラットS.L.">
+                    <input type="checkbox" name="option" value="フラットS.L.">
                     フラットS.L.
                 </label>
 
@@ -843,66 +843,7 @@
 
         form.addEventListener("submit", function () {
 
-            /*
-             * 架装
-             */
-
-            const bodyValues =
-                Array.from(
-                    document.querySelectorAll(
-                        'input[name="bodyCheck"]:checked'
-                    )
-                ).map(function (checkbox) {
-
-                    return checkbox.value;
-
-                });
-
-
-            /*
-             * オプション
-             */
-
-            const optionValues =
-                Array.from(
-                    document.querySelectorAll(
-                        'input[name="optionCheck"]:checked'
-                    )
-                ).map(function (checkbox) {
-
-                    return checkbox.value;
-
-                });
-
-
-            /*
-             * hidden inputを作成
-             */
-
-            const bodyInput =
-                document.createElement("input");
-
-            bodyInput.type = "hidden";
-
-            bodyInput.name = "body";
-
-            bodyInput.value =
-                bodyValues.join(",");
-
-            form.appendChild(bodyInput);
-
-
-            const optionInput =
-                document.createElement("input");
-
-            optionInput.type = "hidden";
-
-            optionInput.name = "option";
-
-            optionInput.value =
-                optionValues.join(",");
-
-            form.appendChild(optionInput);
+     
 
 
             /*
