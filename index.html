@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex,nofollow" />
+    <meta name="robots" content="noindex,nofollow">
 
     <title>車両データ入力</title>
 
@@ -28,9 +28,9 @@
 
         form {
             max-width: 800px;
-            margin: auto;
+            margin: 0 auto;
             padding: 20px;
-            background: white;
+            background: #fff;
             border-radius: 10px;
         }
 
@@ -52,6 +52,14 @@
             font-size: 16px;
             border: 1px solid #aaa;
             border-radius: 5px;
+            background: #fff;
+        }
+
+        input[type="text"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #555;
         }
 
         textarea {
@@ -81,12 +89,13 @@
         .checkbox-item {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 7px;
             padding: 9px;
             border: 1px solid #ddd;
             border-radius: 5px;
             background: #fafafa;
             cursor: pointer;
+            font-weight: normal;
         }
 
         .checkbox-item input {
@@ -111,7 +120,7 @@
             border: none;
             border-radius: 6px;
             background: #333;
-            color: white;
+            color: #fff;
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
@@ -119,6 +128,11 @@
 
         .submit-button:hover {
             opacity: 0.85;
+        }
+
+        .submit-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
 
         .message {
@@ -131,12 +145,8 @@
             background: #e8f5e9;
         }
 
-        .required {
-            margin-left: 5px;
-            font-size: 12px;
-        }
-
         @media (max-width: 600px) {
+
             body {
                 padding: 10px;
             }
@@ -167,598 +177,536 @@
 
 <body>
 
-<h1>車両データ入力</h1>
+    <h1>車両データ入力</h1>
 
-<form
-    id="vehicleForm"
-    action="https://script.google.com/macros/s/AKfycbwJ5HJ2XZA2lfhkKyPtnEPAyrfugFrF2-SDRzWRZXUZYX0a9l9pBd7qYSU7EyY3S-g/exec"
-    method="POST"
-    target="resultFrame">
+    <form
+        id="vehicleForm"
+        action="https://script.google.com/macros/s/AKfycbwJ5HJ2XZA2lfhkKyPtnEPAyrfugFrF2-SDRzWRZXUZYX0a9l9pBd7qYSU7EyY3S-g/exec"
+        method="POST"
+        target="resultFrame">
 
-    <!-- クラス -->
-    <div class="field">
-        <label class="field-title" for="class">クラス</label>
+        <!-- クラス -->
+        <div class="field">
 
-        <select name="class" id="class" required>
-            <option value="">選択してください</option>
-            <option value="TB">TB</option>
-            <option value="TC">TC</option>
-            <option value="TD">TD</option>
-            <option value="TE">TE</option>
-            <option value="TF">TF</option>
-            <option value="TG">TG</option>
-            <option value="TH">TH</option>
-            <option value="M">M</option>
-        </select>
-    </div>
+            <label class="field-title" for="class">
+                クラス
+            </label>
 
+            <select name="class" id="class">
 
-    <!-- メーカー -->
-    <div class="field">
-        <label class="field-title" for="maker">メーカー</label>
+                <option value="">選択してください</option>
 
-        <select name="maker" id="maker" required>
-            <option value="">選択してください</option>
-            <option value="いすゞ">いすゞ</option>
-            <option value="日野">日野</option>
-            <option value="三菱ふそう">三菱ふそう</option>
-            <option value="トヨタ">トヨタ</option>
-            <option value="日産">日産</option>
-            <option value="マツダ">マツダ</option>
-        </select>
-    </div>
+                <option value="TB">TB</option>
+                <option value="TC">TC</option>
+                <option value="TD">TD</option>
+                <option value="TE">TE</option>
+                <option value="TF">TF</option>
+                <option value="TG">TG</option>
+                <option value="TH">TH</option>
+                <option value="M">M</option>
 
-
-    <!-- 車種名 -->
-    <div class="field">
-        <label class="field-title" for="model">車種名</label>
-
-        <select name="model" id="model" required disabled>
-            <option value="">先にメーカーを選択してください</option>
-        </select>
-    </div>
-
-
-    <!-- 年式 -->
-    <div class="field">
-        <label class="field-title" for="year">年式</label>
-
-        <input
-            type="text"
-            name="year"
-            id="year"
-            placeholder="例：2024">
-    </div>
-
-
-    <!-- A/M -->
-    <div class="field">
-        <label class="field-title" for="transmission">A/M</label>
-
-        <input
-            type="text"
-            name="transmission"
-            id="transmission"
-            placeholder="例：5MT、AMT">
-    </div>
-
-
-    <!-- 積載量 -->
-    <div class="field">
-        <label class="field-title">積載量</label>
-
-        <div class="load-group">
-
-            <select name="loadClass">
-                <option value="">クラス</option>
-                <option value="1tクラス">1tクラス</option>
-                <option value="2tクラス">2tクラス</option>
-                <option value="3tクラス">3tクラス</option>
-                <option value="4tクラス">4tクラス</option>
             </select>
+
+        </div>
+
+
+        <!-- メーカー -->
+        <div class="field">
+
+            <label class="field-title" for="maker">
+                メーカー
+            </label>
+
+            <select name="maker" id="maker">
+
+                <option value="">選択してください</option>
+
+                <option value="いすゞ">いすゞ</option>
+                <option value="日野">日野</option>
+                <option value="三菱ふそう">三菱ふそう</option>
+                <option value="トヨタ">トヨタ</option>
+                <option value="日産">日産</option>
+                <option value="マツダ">マツダ</option>
+
+            </select>
+
+        </div>
+
+
+        <!-- 車種名 -->
+        <div class="field">
+
+            <label class="field-title" for="model">
+                車種名
+            </label>
+
+            <select name="model" id="model" disabled>
+
+                <option value="">
+                    先にメーカーを選択してください
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- 年式 -->
+        <div class="field">
+
+            <label class="field-title" for="year">
+                年式
+            </label>
 
             <input
                 type="text"
-                name="loadDetail"
-                placeholder="詳細（例：2.0t）">
+                name="year"
+                id="year"
+                placeholder="例：2024">
 
         </div>
-    </div>
 
 
-    <!-- 架装 -->
-    <div class="field">
-        <span class="field-title">架装</span>
+        <!-- A/M -->
+        <div class="field">
 
-        <div class="checkbox-group">
-
-            <label class="checkbox-item">
-                <input type="checkbox" name="bodyCheck" value="平">
-                平
+            <label class="field-title" for="transmission">
+                A/M
             </label>
 
-            <label class="checkbox-item">
-                <input type="checkbox" name="bodyCheck" value="アルミ">
-                アルミ
-            </label>
-
-            <label class="checkbox-item">
-                <input type="checkbox" name="bodyCheck" value="ウイング">
-                ウイング
-            </label>
-
-            <label class="checkbox-item">
-                <input type="checkbox" name="bodyCheck" value="積載車">
-                積載車
-            </label>
-
-            <label class="checkbox-item">
-                <input type="checkbox" name="bodyCheck" value="ダンプ">
-                ダンプ
-            </label>
-
-            <label class="checkbox-item">
-                <input type="checkbox" name="bodyCheck" value="ローダーダンプ">
-                ローダーダンプ
-            </label>
-
-            <label class="checkbox-item">
-                <input type="checkbox" name="bodyCheck" value="クレーン">
-                クレーン
-            </label>
-
-            <label class="checkbox-item">
-                <input type="checkbox" name="bodyCheck" value="ダブルキャブ">
-                ダブルキャブ
-            </label>
-
-            <label class="checkbox-item">
-                <input type="checkbox" name="bodyCheck" value="ショート">
-                ショート
-            </label>
-
-            <label class="checkbox-item">
-                <input type="checkbox" name="bodyCheck" value="セミロング">
-                セミロング
-            </label>
-
-            <label class="checkbox-item">
-                <input type="checkbox" name="bodyCheck" value="ロング">
-                ロング
-            </label>
-
-            <label class="checkbox-item">
-                <input type="checkbox" name="bodyCheck" value="ワイド">
-                ワイド
-            </label>
-
-            <label class="checkbox-item">
-                <input type="checkbox" name="bodyCheck" value="ローキャブ">
-                ローキャブ
-            </label>
-
-            <label class="checkbox-item">
-                <input type="checkbox" name="bodyCheck" value="ハイキャブ">
-                ハイキャブ
-            </label>
+            <input
+                type="text"
+                name="transmission"
+                id="transmission"
+                placeholder="例：5MT、AMT">
 
         </div>
-    </div>
 
 
-    <!-- オプション -->
-    <div class="field">
-        <span class="field-title">オプション</span>
+        <!-- 積載量 -->
+        <div class="field">
 
-        <div class="checkbox-group">
-
-            <label class="checkbox-item">
-                <input type="checkbox" name="optionCheck" value="PG">
-                PG
+            <label class="field-title">
+                積載量
             </label>
 
-            <label class="checkbox-item">
-                <input type="checkbox" name="optionCheck" value="コボレーン">
-                コボレーン
-            </label>
+            <div class="load-group">
 
-            <label class="checkbox-item">
-                <input type="checkbox" name="optionCheck" value="メッキ">
-                メッキ
-            </label>
+                <select name="loadClass">
 
-            <label class="checkbox-item">
-                <input type="checkbox" name="optionCheck" value="電動サイド">
-                電動サイド
-            </label>
+                    <option value="">
+                        選択してください
+                    </option>
 
-            <label class="checkbox-item">
-                <input type="checkbox" name="optionCheck" value="フォグ">
-                フォグ
-            </label>
+                    <option value="1tクラス">
+                        1tクラス
+                    </option>
 
-            <label class="checkbox-item">
-                <input type="checkbox" name="optionCheck" value="フラットS.L.">
-                フラットS.L.
-            </label>
+                    <option value="2tクラス">
+                        2tクラス
+                    </option>
+
+                    <option value="3tクラス">
+                        3tクラス
+                    </option>
+
+                    <option value="4tクラス">
+                        4tクラス
+                    </option>
+
+                </select>
+
+                <input
+                    type="text"
+                    name="loadDetail"
+                    placeholder="詳細（例：2.0t）">
+
+            </div>
 
         </div>
-    </div>
 
 
-    <!-- 地名 -->
-    <div class="field">
-        <label class="field-title" for="location">地名</label>
+        <!-- 架装 -->
+        <div class="field">
 
-        <select name="location" id="location" required>
-            <option value="">選択してください</option>
-            <option value="袖ヶ浦">袖ヶ浦</option>
-            <option value="千葉">千葉</option>
-            <option value="大宮">大宮</option>
-            <option value="習志野">習志野</option>
-            <option value="所沢">所沢</option>
-            <option value="野田">野田</option>
-            <option value="成田">成田</option>
-            <option value="品川">品川</option>
-            <option value="多摩">多摩</option>
-            <option value="足立">足立</option>
-            <option value="川崎">川崎</option>
-            <option value="水戸">水戸</option>
-            <option value="横浜">横浜</option>
-            <option value="八王子">八王子</option>
-        </select>
-    </div>
+            <span class="field-title">
+                架装
+            </span>
+
+            <div class="checkbox-group">
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="bodyCheck" value="平">
+                    平
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="bodyCheck" value="アルミ">
+                    アルミ
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="bodyCheck" value="ウイング">
+                    ウイング
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="bodyCheck" value="積載車">
+                    積載車
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="bodyCheck" value="ダンプ">
+                    ダンプ
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="bodyCheck" value="ローダーダンプ">
+                    ローダーダンプ
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="bodyCheck" value="クレーン">
+                    クレーン
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="bodyCheck" value="ダブルキャブ">
+                    ダブルキャブ
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="bodyCheck" value="ショート">
+                    ショート
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="bodyCheck" value="セミロング">
+                    セミロング
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="bodyCheck" value="ロング">
+                    ロング
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="bodyCheck" value="ワイド">
+                    ワイド
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="bodyCheck" value="ローキャブ">
+                    ローキャブ
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="bodyCheck" value="ハイキャブ">
+                    ハイキャブ
+                </label>
+
+            </div>
+
+        </div>
 
 
-    <!-- 分類番号 -->
-    <div class="field">
-        <label class="field-title" for="numberClass">分類番号</label>
+        <!-- オプション -->
+        <div class="field">
 
-        <input
-            type="text"
-            name="numberClass"
-            id="numberClass"
-            placeholder="例：400">
-    </div>
+            <span class="field-title">
+                オプション
+            </span>
+
+            <div class="checkbox-group">
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="optionCheck" value="PG">
+                    PG
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="optionCheck" value="コボレーン">
+                    コボレーン
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="optionCheck" value="メッキ">
+                    メッキ
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="optionCheck" value="電動サイド">
+                    電動サイド
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="optionCheck" value="フォグ">
+                    フォグ
+                </label>
+
+                <label class="checkbox-item">
+                    <input type="checkbox" name="optionCheck" value="フラットS.L.">
+                    フラットS.L.
+                </label>
+
+            </div>
+
+        </div>
 
 
-    <!-- 車両番号 -->
-    <div class="field">
-        <label class="field-title" for="number">車両番号</label>
+        <!-- 地名 -->
+        <div class="field">
 
-        <input
-            type="text"
-            name="number"
-            id="number"
-            placeholder="例：2828">
-    </div>
+            <label class="field-title" for="location">
+                地名
+            </label>
 
+            <select name="location" id="location">
 
-    <!-- 目撃日 -->
-    <div class="field">
-        <span class="field-title">目撃日</span>
+                <option value="">
+                    選択してください
+                </option>
 
-        <div class="date-group">
+                <option value="袖ヶ浦">袖ヶ浦</option>
+                <option value="千葉">千葉</option>
+                <option value="大宮">大宮</option>
+                <option value="習志野">習志野</option>
+                <option value="所沢">所沢</option>
+                <option value="野田">野田</option>
+                <option value="成田">成田</option>
+                <option value="品川">品川</option>
+                <option value="多摩">多摩</option>
+                <option value="足立">足立</option>
+                <option value="川崎">川崎</option>
+                <option value="水戸">水戸</option>
+                <option value="横浜">横浜</option>
+                <option value="八王子">八王子</option>
 
-            <select name="sightingYear" id="sightingYear">
-                <option value="">年</option>
             </select>
 
-            <span>年</span>
+        </div>
 
-            <select name="sightingMonth" id="sightingMonth">
-                <option value="">月</option>
-            </select>
 
-            <span>月</span>
+        <!-- 分類番号 -->
+        <div class="field">
 
-            <select name="sightingDay" id="sightingDay">
-                <option value="">日</option>
-            </select>
+            <label class="field-title" for="numberClass">
+                分類番号
+            </label>
 
-            <span>日</span>
+            <input
+                type="text"
+                name="numberClass"
+                id="numberClass"
+                placeholder="例：400">
 
         </div>
+
+
+        <!-- 車両番号 -->
+        <div class="field">
+
+            <label class="field-title" for="number">
+                車両番号
+            </label>
+
+            <input
+                type="text"
+                name="number"
+                id="number"
+                placeholder="例：2828">
+
+        </div>
+
+
+        <!-- 目撃日 -->
+        <div class="field">
+
+            <span class="field-title">
+                目撃日
+            </span>
+
+            <div class="date-group">
+
+                <select name="sightingYear" id="sightingYear">
+
+                    <option value="">年</option>
+
+                </select>
+
+                <span>年</span>
+
+
+                <select name="sightingMonth" id="sightingMonth">
+
+                    <option value="">月</option>
+
+                </select>
+
+                <span>月</span>
+
+
+                <select name="sightingDay" id="sightingDay">
+
+                    <option value="">日</option>
+
+                </select>
+
+                <span>日</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- 目撃場所 -->
+        <div class="field">
+
+            <label class="field-title" for="sightingPlace">
+                目撃場所
+            </label>
+
+            <input
+                type="text"
+                name="sightingPlace"
+                id="sightingPlace">
+
+        </div>
+
+
+        <!-- 所属営業所 -->
+        <div class="field">
+
+            <label class="field-title" for="office">
+                所属営業所
+            </label>
+
+            <input
+                type="text"
+                name="office"
+                id="office">
+
+        </div>
+
+
+        <!-- 備考 -->
+        <div class="field">
+
+            <label class="field-title" for="note">
+                備考
+            </label>
+
+            <textarea
+                name="note"
+                id="note"></textarea>
+
+        </div>
+
+
+        <!-- 送信 -->
+        <button
+            type="submit"
+            class="submit-button"
+            id="submitButton">
+
+            送信
+
+        </button>
+
+    </form>
+
+
+    <!-- Apps Scriptの返答用 -->
+    <iframe
+        name="resultFrame"
+        id="resultFrame"
+        style="display:none;">
+    </iframe>
+
+
+    <div
+        id="message"
+        class="message">
+
+        送信しました。
+
     </div>
 
 
-    <!-- 目撃場所 -->
-    <div class="field">
-        <label class="field-title" for="sightingPlace">目撃場所</label>
-
-        <input
-            type="text"
-            name="sightingPlace"
-            id="sightingPlace">
-    </div>
-
-
-    <!-- 所属営業所 -->
-    <div class="field">
-        <label class="field-title" for="office">所属営業所</label>
-
-        <input
-            type="text"
-            name="office"
-            id="office">
-    </div>
-
-
-    <!-- 備考 -->
-    <div class="field">
-        <label class="field-title" for="note">備考</label>
-
-        <textarea
-            name="note"
-            id="note"></textarea>
-    </div>
-
-
-    <!-- 送信 -->
-    <button type="submit" class="submit-button">
-        送信
-    </button>
-
-</form>
-
-
-<!-- Apps Scriptからの返答を受け取る場所 -->
-<iframe
-    name="resultFrame"
-    id="resultFrame"
-    style="display:none;">
-</iframe>
-
-
-<div id="message" class="message">
-    送信しました。
-</div>
-
-
-<script>
-
-    /*
-     * メーカー → 車種名
-     */
-    const vehicleModels = {
-
-        "いすゞ": [
-            "エルフ",
-            "フォワード"
-        ],
-
-        "日野": [
-            "デュトロ",
-            "レンジャー",
-            "リエッセ"
-        ],
-
-        "三菱ふそう": [
-            "キャンター",
-            "ファイター",
-            "ローザ"
-        ],
-
-        "トヨタ": [
-            "ダイナ",
-            "コースター"
-        ],
-
-        "日産": [
-            "アトラス",
-            "シビリアン"
-        ],
-
-        "マツダ": [
-            "タイタン"
-        ]
-
-    };
-
-
-    /*
-     * メーカー変更時に車種を変更
-     */
-    const makerSelect = document.getElementById("maker");
-    const modelSelect = document.getElementById("model");
-
-    makerSelect.addEventListener("change", function () {
-
-        const maker = this.value;
-
-        // 車種を一度クリア
-        modelSelect.innerHTML = "";
-
-        // メーカー未選択
-        if (!maker) {
-
-            const option = document.createElement("option");
-
-            option.value = "";
-            option.textContent = "先にメーカーを選択してください";
-
-            modelSelect.appendChild(option);
-
-            modelSelect.disabled = true;
-
-            return;
-        }
-
-
-        // 初期項目
-        const firstOption = document.createElement("option");
-
-        firstOption.value = "";
-        firstOption.textContent = "選択してください";
-
-        modelSelect.appendChild(firstOption);
-
-
-        // 対応する車種を追加
-        vehicleModels[maker].forEach(function (model) {
-
-            const option = document.createElement("option");
-
-            option.value = model;
-            option.textContent = model;
-
-            modelSelect.appendChild(option);
-
-        });
-
-
-        modelSelect.disabled = false;
-
-    });
-
-
-    /*
-     * 目撃年
-     */
-    const yearSelect =
-        document.getElementById("sightingYear");
-
-    for (let year = 2026; year <= 2030; year++) {
-
-        const option = document.createElement("option");
-
-        option.value = year;
-        option.textContent = year;
-
-        yearSelect.appendChild(option);
-
-    }
-
-
-    /*
-     * 目撃月
-     */
-    const monthSelect =
-        document.getElementById("sightingMonth");
-
-    for (let month = 1; month <= 12; month++) {
-
-        const option = document.createElement("option");
-
-        option.value = month;
-        option.textContent = month;
-
-        monthSelect.appendChild(option);
-
-    }
-
-
-    /*
-     * 目撃日
-     */
-    const daySelect =
-        document.getElementById("sightingDay");
-
-    for (let day = 1; day <= 31; day++) {
-
-        const option = document.createElement("option");
-
-        option.value = day;
-        option.textContent = day;
-
-        daySelect.appendChild(option);
-
-    }
-
-
-    /*
-     * フォーム送信
-     *
-     * 架装・オプションの複数選択を
-     * カンマ区切りの文字列にまとめてから送信する
-     */
-    const form =
-        document.getElementById("vehicleForm");
-
-    const message =
-        document.getElementById("message");
-
-
-    form.addEventListener("submit", function () {
+    <script>
 
         /*
-         * 架装
+         * ========================================
+         * メーカー → 車種名
+         * ========================================
          */
-        const bodyValues =
-            Array.from(
-                document.querySelectorAll(
-                    'input[name="bodyCheck"]:checked'
-                )
-            ).map(function (checkbox) {
-                return checkbox.value;
-            });
+
+        const vehicleModels = {
+
+            "いすゞ": [
+                "エルフ",
+                "フォワード"
+            ],
+
+            "日野": [
+                "デュトロ",
+                "レンジャー",
+                "リエッセ"
+            ],
+
+            "三菱ふそう": [
+                "キャンター",
+                "ファイター",
+                "ローザ"
+            ],
+
+            "トヨタ": [
+                "ダイナ",
+                "コースター"
+            ],
+
+            "日産": [
+                "アトラス",
+                "シビリアン"
+            ],
+
+            "マツダ": [
+                "タイタン"
+            ]
+
+        };
 
 
         /*
-         * オプション
+         * ========================================
+         * メーカー変更
+         * ========================================
          */
-        const optionValues =
-            Array.from(
-                document.querySelectorAll(
-                    'input[name="optionCheck"]:checked'
-                )
-            ).map(function (checkbox) {
-                return checkbox.value;
-            });
+
+        const makerSelect =
+            document.getElementById("maker");
+
+        const modelSelect =
+            document.getElementById("model");
 
 
-        /*
-         * hidden inputを作成
-         */
-        const bodyInput =
-            document.createElement("input");
+        makerSelect.addEventListener("change", function () {
 
-        bodyInput.type = "hidden";
-        bodyInput.name = "body";
-        bodyInput.value = bodyValues.join(",");
-
-        form.appendChild(bodyInput);
+            const maker = this.value;
 
 
-        const optionInput =
-            document.createElement("input");
-
-        optionInput.type = "hidden";
-        optionInput.name = "option";
-        optionInput.value = optionValues.join(",");
-
-        form.appendChild(optionInput);
+            // 車種をリセット
+            modelSelect.innerHTML = "";
 
 
-        /*
-         * 送信完了表示
-         */
-        message.style.display = "block";
-
-    });
-
-
-    /*
-     * iframeの読み込み後にフォームをリセット
-     *
-     * Apps Scriptへの送信後に実行
-     */
-    document.getElementById("resultFrame")
-        .addEventListener("load", function () {
-
-            if (form.dataset.submitted === "true") {
-
-                form.reset();
-
-                /*
-                 * 車種名を初期状態に戻す
-                 */
-                modelSelect.innerHTML = "";
+            // メーカー未選択
+            if (!maker) {
 
                 const option =
                     document.createElement("option");
 
                 option.value = "";
+
                 option.textContent =
                     "先にメーカーを選択してください";
 
@@ -766,23 +714,291 @@
 
                 modelSelect.disabled = true;
 
-                form.dataset.submitted = "false";
-
+                return;
             }
+
+
+            // 「選択してください」
+            const firstOption =
+                document.createElement("option");
+
+            firstOption.value = "";
+
+            firstOption.textContent =
+                "選択してください";
+
+            modelSelect.appendChild(firstOption);
+
+
+            // 車種を追加
+            vehicleModels[maker].forEach(function (model) {
+
+                const option =
+                    document.createElement("option");
+
+                option.value = model;
+
+                option.textContent = model;
+
+                modelSelect.appendChild(option);
+
+            });
+
+
+            modelSelect.disabled = false;
 
         });
 
 
-    /*
-     * submitされたことを記録
-     */
-    form.addEventListener("submit", function () {
+        /*
+         * ========================================
+         * 目撃年
+         * ========================================
+         */
 
-        form.dataset.submitted = "true";
+        const yearSelect =
+            document.getElementById("sightingYear");
 
-    });
 
-</script>
+        for (let year = 2026; year <= 2030; year++) {
+
+            const option =
+                document.createElement("option");
+
+            option.value = year;
+
+            option.textContent = year;
+
+            yearSelect.appendChild(option);
+
+        }
+
+
+        /*
+         * ========================================
+         * 目撃月
+         * ========================================
+         */
+
+        const monthSelect =
+            document.getElementById("sightingMonth");
+
+
+        for (let month = 1; month <= 12; month++) {
+
+            const option =
+                document.createElement("option");
+
+            option.value = month;
+
+            option.textContent = month;
+
+            monthSelect.appendChild(option);
+
+        }
+
+
+        /*
+         * ========================================
+         * 目撃日
+         * ========================================
+         */
+
+        const daySelect =
+            document.getElementById("sightingDay");
+
+
+        for (let day = 1; day <= 31; day++) {
+
+            const option =
+                document.createElement("option");
+
+            option.value = day;
+
+            option.textContent = day;
+
+            daySelect.appendChild(option);
+
+        }
+
+
+        /*
+         * ========================================
+         * フォーム送信
+         * ========================================
+         */
+
+        const form =
+            document.getElementById("vehicleForm");
+
+        const message =
+            document.getElementById("message");
+
+        const submitButton =
+            document.getElementById("submitButton");
+
+        const resultFrame =
+            document.getElementById("resultFrame");
+
+
+        form.addEventListener("submit", function () {
+
+            /*
+             * 架装
+             */
+
+            const bodyValues =
+                Array.from(
+                    document.querySelectorAll(
+                        'input[name="bodyCheck"]:checked'
+                    )
+                ).map(function (checkbox) {
+
+                    return checkbox.value;
+
+                });
+
+
+            /*
+             * オプション
+             */
+
+            const optionValues =
+                Array.from(
+                    document.querySelectorAll(
+                        'input[name="optionCheck"]:checked'
+                    )
+                ).map(function (checkbox) {
+
+                    return checkbox.value;
+
+                });
+
+
+            /*
+             * hidden inputを作成
+             */
+
+            const bodyInput =
+                document.createElement("input");
+
+            bodyInput.type = "hidden";
+
+            bodyInput.name = "body";
+
+            bodyInput.value =
+                bodyValues.join(",");
+
+            form.appendChild(bodyInput);
+
+
+            const optionInput =
+                document.createElement("input");
+
+            optionInput.type = "hidden";
+
+            optionInput.name = "option";
+
+            optionInput.value =
+                optionValues.join(",");
+
+            form.appendChild(optionInput);
+
+
+            /*
+             * 送信済みフラグ
+             */
+
+            form.dataset.submitted = "true";
+
+
+            /*
+             * ボタンを一時的に無効化
+             */
+
+            submitButton.disabled = true;
+
+            submitButton.textContent = "送信中...";
+
+        });
+
+
+        /*
+         * ========================================
+         * 送信後
+         * ========================================
+         */
+
+        resultFrame.addEventListener("load", function () {
+
+            if (form.dataset.submitted !== "true") {
+                return;
+            }
+
+
+            /*
+             * フォームをリセット
+             */
+
+            form.reset();
+
+
+            /*
+             * 車種名を初期状態へ
+             */
+
+            modelSelect.innerHTML = "";
+
+            const option =
+                document.createElement("option");
+
+            option.value = "";
+
+            option.textContent =
+                "先にメーカーを選択してください";
+
+            modelSelect.appendChild(option);
+
+            modelSelect.disabled = true;
+
+
+            /*
+             * 送信ボタンを復活
+             */
+
+            submitButton.disabled = false;
+
+            submitButton.textContent = "送信";
+
+
+            /*
+             * 完了メッセージ
+             */
+
+            message.style.display = "block";
+
+
+            /*
+             * フラグ解除
+             */
+
+            form.dataset.submitted = "false";
+
+
+            /*
+             * 数秒後にメッセージを消す
+             */
+
+            setTimeout(function () {
+
+                message.style.display = "none";
+
+            }, 3000);
+
+        });
+
+    </script>
 
 </body>
+
 </html>
