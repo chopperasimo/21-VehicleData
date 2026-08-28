@@ -1329,13 +1329,8 @@ script.src =
     API_URL +
     "?" +
     query.toString();
-    
-const debug =
-    document.createElement("div");
 
-debug.textContent = script.src;
-
-document.body.prepend(debug);
+status.textContent = script.src;
 
     /*
      * 成功
