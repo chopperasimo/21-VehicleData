@@ -1317,18 +1317,19 @@ function searchDatabase() {
      * URL作成
      */
 
-    const query =
-        new URLSearchParams(params);
+const query =
+    new URLSearchParams(params);
 
-
-    const script =
-        document.createElement("script");
-
+const script =
+    document.createElement("script");
 
 script.src =
     API_URL +
     "?" +
     query.toString();
+
+status.textContent =
+    script.src;
 
 status.textContent = script.src;
 
