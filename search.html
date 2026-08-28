@@ -3,244 +3,145 @@
 
 <head>
 
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="robots"
-        content="noindex,nofollow">
-
-    <title>車両検索</title>
-
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-
-        body {
-
-            margin: 0;
-
-            padding: 20px;
-
-            background: #f5f5f5;
-
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                sans-serif;
-
-            color: #333;
-
-        }
-
-
-        h1 {
-
-            max-width: 1100px;
-
-            margin:
-                0 auto 20px;
-
-        }
-
-
-        .search-form {
-
-            max-width: 1100px;
-
-            margin:
-                0 auto 25px;
-
-            padding: 20px;
-
-            background: white;
-
-            border-radius: 10px;
-
-        }
-
-
-        .field {
-
-            margin-bottom: 18px;
-
-        }
-
-
-        .field-title {
-
-            display: block;
-
-            margin-bottom: 6px;
-
-            font-weight: bold;
-
-        }
-
-
-        input[type="text"],
-        select {
-
-            width: 100%;
-
-            padding: 10px;
-
-            font-size: 16px;
-
-            border:
-                1px solid #aaa;
-
-            border-radius: 5px;
-
-            background: white;
-
-        }
-
-
-        .date-group {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 6px;
-
-        }
-
-
-        .date-group select {
-
-            width: auto;
-
-            flex: 1;
-
-        }
-
-
-        .checkbox-group {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(140px, 1fr)
-                );
-
-            gap: 8px;
-
-        }
-
-
-        .checkbox-item {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 7px;
-
-            padding: 9px;
-
-            border:
-                1px solid #ddd;
-
-            border-radius: 5px;
-
-            background: #fafafa;
-
-            cursor: pointer;
-
-        }
-
-
-        .checkbox-item input {
-
-            margin: 0;
-
-        }
-
-
-        .button-area {
-
-            display: flex;
-
-            gap: 10px;
-
-        }
-
-
-        button {
-
-            flex: 1;
-
-            padding: 14px;
-
-            border: none;
-
-            border-radius: 6px;
-
-            font-size: 17px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-        }
-
-
-        #searchButton {
-
-            background: #333;
-
-            color: white;
-
-        }
-
-
-        #clearButton {
-
-            background: #ddd;
-
-            color: #333;
-
-        }
-
-
-        button:disabled {
-
-            opacity: 0.5;
-
-            cursor: not-allowed;
-
-        }
-
-
-        #status {
-
-            max-width: 1100px;
-
-            margin:
-                0 auto 15px;
-
-            text-align: center;
-
-        }
-
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="robots"
+      content="noindex,nofollow">
+
+<title>車両検索</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: #f5f5f5;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    color: #333;
+}
+
+h1 {
+    max-width: 1100px;
+    margin: 0 auto 20px;
+}
+
+.search-form {
+    max-width: 1100px;
+    margin: 0 auto 25px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+.field {
+    margin-bottom: 18px;
+}
+
+.field-title {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background: white;
+}
+
+.date-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.date-group select {
+    width: auto;
+    flex: 1;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(140px, 1fr)
+        );
+    gap: 8px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fafafa;
+    cursor: pointer;
+}
+
+.checkbox-item input {
+    margin: 0;
+}
+
+.button-area {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#searchButton {
+    background: #333;
+    color: white;
+}
+
+#clearButton {
+    background: #ddd;
+    color: #333;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#status {
+    max-width: 1100px;
+    margin: 0 auto 15px;
+    text-align: center;
+}
+
+/* 結果表示 */
 
 .result-area {
     max-width: 1100px;
     margin: 0 auto;
     overflow-x: auto;
-    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -264,52 +165,34 @@ th {
     background: #eee;
 }
 
+.no-result {
+    padding: 30px;
+    background: white;
+    text-align: center;
+    border-radius: 8px;
+}
 
-        .no-result {
+@media (max-width: 600px) {
 
-            padding: 30px;
+    body {
+        padding: 10px;
+    }
 
-            background: white;
+    .search-form {
+        padding: 15px;
+    }
 
-            text-align: center;
+    .button-area {
+        flex-direction: column;
+    }
 
-            border-radius: 8px;
+    .date-group {
+        gap: 3px;
+    }
 
-        }
+}
 
-
-        @media (max-width: 600px) {
-
-            body {
-
-                padding: 10px;
-
-            }
-
-
-            .search-form {
-
-                padding: 15px;
-
-            }
-
-
-            .button-area {
-
-                flex-direction: column;
-
-            }
-
-
-            .date-group {
-
-                gap: 3px;
-
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -317,664 +200,553 @@ th {
 <body>
 
 
-<h1>車両検索</h1>
+<h1>車両検索-test</h1>
 
 
 <div class="search-form">
 
 
-    <!-- クラス -->
+<!-- クラス -->
 
-    <div class="field">
+<div class="field">
 
-        <label
-            class="field-title"
-            for="class">
+<label class="field-title"
+       for="class">
 
-            クラス
+クラス
 
-        </label>
+</label>
 
+<select id="class">
 
-        <select id="class">
+<option value="">
+選択してください
+</option>
 
-            <option value="">
-                選択してください
-            </option>
+<option value="TB">TB</option>
+<option value="TC">TC</option>
+<option value="TD">TD</option>
+<option value="TE">TE</option>
+<option value="TF">TF</option>
+<option value="TG">TG</option>
+<option value="TH">TH</option>
+<option value="M">M</option>
 
-            <option value="TB">TB</option>
-            <option value="TC">TC</option>
-            <option value="TD">TD</option>
-            <option value="TE">TE</option>
-            <option value="TF">TF</option>
-            <option value="TG">TG</option>
-            <option value="TH">TH</option>
-            <option value="M">M</option>
+</select>
 
-        </select>
+</div>
 
-    </div>
 
+<!-- メーカー -->
 
-    <!-- メーカー -->
+<div class="field">
 
-    <div class="field">
+<label class="field-title"
+       for="maker">
 
-        <label
-            class="field-title"
-            for="maker">
+メーカー
 
-            メーカー
+</label>
 
-        </label>
+<select id="maker">
 
+<option value="">
+選択してください
+</option>
 
-        <select id="maker">
+<option value="いすゞ">
+いすゞ
+</option>
 
-            <option value="">
-                選択してください
-            </option>
+<option value="日野">
+日野
+</option>
 
-            <option value="いすゞ">
-                いすゞ
-            </option>
+<option value="三菱ふそう">
+三菱ふそう
+</option>
 
-            <option value="日野">
-                日野
-            </option>
+<option value="トヨタ">
+トヨタ
+</option>
 
-            <option value="三菱ふそう">
-                三菱ふそう
-            </option>
+<option value="日産">
+日産
+</option>
 
-            <option value="トヨタ">
-                トヨタ
-            </option>
+<option value="マツダ">
+マツダ
+</option>
 
-            <option value="日産">
-                日産
-            </option>
+</select>
 
-            <option value="マツダ">
-                マツダ
-            </option>
+</div>
 
-        </select>
 
-    </div>
+<!-- 車種名 -->
 
+<div class="field">
 
-    <!-- 車種名 -->
+<label class="field-title"
+       for="model">
 
-    <div class="field">
+車種名
 
-        <label
-            class="field-title"
-            for="model">
+</label>
 
-            車種名
+<select id="model" disabled>
 
-        </label>
+<option value="">
+先にメーカーを選択してください
+</option>
 
+</select>
 
-        <select
-            id="model"
-            disabled>
+</div>
 
-            <option value="">
-                先にメーカーを選択してください
-            </option>
 
-        </select>
+<!-- 年式 -->
 
-    </div>
+<div class="field">
 
+<label class="field-title"
+       for="year">
 
-    <!-- 年式 -->
+年式（部分一致）
 
-    <div class="field">
+</label>
 
-        <label
-            class="field-title"
-            for="year">
+<input type="text"
+       id="year"
+       placeholder="例：2024">
 
-            年式
-            （部分一致）
+</div>
 
-        </label>
 
+<!-- A/M -->
 
-        <input
-            type="text"
-            id="year"
-            placeholder="例：2024">
+<div class="field">
 
-    </div>
+<label class="field-title"
+       for="transmission">
 
+A/M（部分一致）
 
-    <!-- A/M -->
+</label>
 
-    <div class="field">
+<input type="text"
+       id="transmission"
+       placeholder="例：AM">
 
-        <label
-            class="field-title"
-            for="transmission">
+</div>
 
-            A/M
-            （部分一致）
 
-        </label>
+<!-- 積載量 -->
 
+<div class="field">
 
-        <input
-            type="text"
-            id="transmission"
-            placeholder="例：AM">
+<label class="field-title"
+       for="loadClass">
 
-    </div>
+積載量
 
+</label>
 
-    <!-- 積載量 -->
+<select id="loadClass">
 
-    <div class="field">
+<option value="">
+選択してください
+</option>
 
-        <label
-            class="field-title"
-            for="loadClass">
+<option value="1tクラス">
+1tクラス
+</option>
 
-            積載量
+<option value="2tクラス">
+2tクラス
+</option>
 
-        </label>
+<option value="3tクラス">
+3tクラス
+</option>
 
+<option value="4tクラス">
+4tクラス
+</option>
 
-        <select id="loadClass">
+</select>
 
-            <option value="">
-                選択してください
-            </option>
+</div>
 
-            <option value="1tクラス">
-                1tクラス
-            </option>
 
-            <option value="2tクラス">
-                2tクラス
-            </option>
+<!-- 架装 -->
 
-            <option value="3tクラス">
-                3tクラス
-            </option>
+<div class="field">
 
-            <option value="4tクラス">
-                4tクラス
-            </option>
+<span class="field-title">
 
-        </select>
+架装（部分一致）
 
-    </div>
+</span>
 
+<div class="checkbox-group">
 
-    <!-- 架装 -->
+<label class="checkbox-item">
+<input type="checkbox"
+       name="body"
+       value="平">
+平
+</label>
 
-    <div class="field">
+<label class="checkbox-item">
+<input type="checkbox"
+       name="body"
+       value="アルミ">
+アルミ
+</label>
 
-        <span class="field-title">
-            架装
-        </span>
+<label class="checkbox-item">
+<input type="checkbox"
+       name="body"
+       value="ウイング">
+ウイング
+</label>
 
+<label class="checkbox-item">
+<input type="checkbox"
+       name="body"
+       value="積載車">
+積載車
+</label>
 
-        <div class="checkbox-group">
+<label class="checkbox-item">
+<input type="checkbox"
+       name="body"
+       value="ダンプ">
+ダンプ
+</label>
 
+<label class="checkbox-item">
+<input type="checkbox"
+       name="body"
+       value="ローダーダンプ">
+ローダーダンプ
+</label>
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="body"
-                    value="平">
-                平
-            </label>
+<label class="checkbox-item">
+<input type="checkbox"
+       name="body"
+       value="クレーン">
+クレーン
+</label>
 
+<label class="checkbox-item">
+<input type="checkbox"
+       name="body"
+       value="ダブルキャブ">
+ダブルキャブ
+</label>
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="body"
-                    value="アルミ">
-                アルミ
-            </label>
+<label class="checkbox-item">
+<input type="checkbox"
+       name="body"
+       value="ショート">
+ショート
+</label>
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="body"
-                    value="パネル">
-                パネル
-            </label>
+<label class="checkbox-item">
+<input type="checkbox"
+       name="body"
+       value="セミロング">
+セミロング
+</label>
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="body"
-                    value="冷凍車">
-                冷凍車
-            </label>            
+<label class="checkbox-item">
+<input type="checkbox"
+       name="body"
+       value="ロング">
+ロング
+</label>
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="body"
-                    value="ウイング">
-                ウイング
-            </label>
+<label class="checkbox-item">
+<input type="checkbox"
+       name="body"
+       value="ワイド">
+ワイド
+</label>
 
+<label class="checkbox-item">
+<input type="checkbox"
+       name="body"
+       value="ローキャブ">
+ローキャブ
+</label>
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="body"
-                    value="積載車">
-                積載車
-            </label>
+<label class="checkbox-item">
+<input type="checkbox"
+       name="body"
+       value="ハイキャブ">
+ハイキャブ
+</label>
 
+</div>
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="body"
-                    value="ダンプ">
-                ダンプ
-            </label>
+</div>
 
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="body"
-                    value="ローダーダンプ">
-                ローダーダンプ
-            </label>
+<!-- オプション -->
 
+<div class="field">
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="body"
-                    value="クレーン">
-                クレーン
-            </label>
+<span class="field-title">
 
+オプション（部分一致）
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="body"
-                    value="ダブルキャブ">
-                ダブルキャブ
-            </label>
+</span>
 
+<div class="checkbox-group">
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="body"
-                    value="ショート">
-                ショート
-            </label>
+<label class="checkbox-item">
+<input type="checkbox"
+       name="option"
+       value="PG">
+PG
+</label>
 
+<label class="checkbox-item">
+<input type="checkbox"
+       name="option"
+       value="コボレーン">
+コボレーン
+</label>
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="body"
-                    value="セミロング">
-                セミロング
-            </label>
+<label class="checkbox-item">
+<input type="checkbox"
+       name="option"
+       value="メッキ">
+メッキ
+</label>
 
+<label class="checkbox-item">
+<input type="checkbox"
+       name="option"
+       value="電動サイド">
+電動サイド
+</label>
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="body"
-                    value="ロング">
-                ロング
-            </label>
+<label class="checkbox-item">
+<input type="checkbox"
+       name="option"
+       value="フォグ">
+フォグ
+</label>
 
+<label class="checkbox-item">
+<input type="checkbox"
+       name="option"
+       value="フラットS.L.">
+フラットS.L.
+</label>
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="body"
-                    value="ワイド">
-                ワイド
-            </label>
+</div>
 
+</div>
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="body"
-                    value="ローキャブ">
-                ローキャブ
-            </label>
 
+<!-- 地名 -->
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="body"
-                    value="ハイキャブ">
-                ハイキャブ
-            </label>
+<div class="field">
 
+<label class="field-title"
+       for="location">
 
-        </div>
+地名
 
-    </div>
+</label>
 
+<select id="location">
 
-    <!-- オプション -->
+<option value="">
+選択してください
+</option>
 
-    <div class="field">
+<option value="袖ヶ浦">袖ヶ浦</option>
+<option value="千葉">千葉</option>
+<option value="大宮">大宮</option>
+<option value="習志野">習志野</option>
+<option value="所沢">所沢</option>
+<option value="野田">野田</option>
+<option value="成田">成田</option>
+<option value="品川">品川</option>
+<option value="多摩">多摩</option>
+<option value="足立">足立</option>
+<option value="川崎">川崎</option>
+<option value="水戸">水戸</option>
+<option value="横浜">横浜</option>
+<option value="八王子">八王子</option>
 
-        <span class="field-title">
-            オプション
-        </span>
+</select>
 
+</div>
 
-        <div class="checkbox-group">
 
+<!-- 分類番号 -->
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="option"
-                    value="PG">
-                PG
-            </label>
+<div class="field">
 
+<label class="field-title"
+       for="numberClass">
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="option"
-                    value="コボレーン">
-                コボレーン
-            </label>
+分類番号（完全一致）
 
+</label>
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="option"
-                    value="メッキ">
-                メッキ
-            </label>
+<input type="text"
+       id="numberClass">
 
+</div>
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="option"
-                    value="電動サイド">
-                電動サイド
-            </label>
 
+<!-- 車両番号 -->
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="option"
-                    value="フォグ">
-                フォグ
-            </label>
+<div class="field">
 
+<label class="field-title"
+       for="number">
 
-            <label class="checkbox-item">
-                <input
-                    type="checkbox"
-                    name="option"
-                    value="フラットS.L.">
-                フラットS.L.
-            </label>
+車両番号（完全一致）
 
+</label>
 
-        </div>
+<input type="text"
+       id="number">
 
-    </div>
+</div>
 
 
-    <!-- 地名 -->
+<!-- 目撃日 -->
 
-    <div class="field">
+<div class="field">
 
-        <label
-            class="field-title"
-            for="location">
+<span class="field-title">
 
-            地名
+目撃日
 
-        </label>
+</span>
 
+<div class="date-group">
 
-        <select id="location">
+<select id="sightingYear">
 
-            <option value="">
-                選択してください
-            </option>
+<option value="">年</option>
 
-            <option value="袖ヶ浦">袖ヶ浦</option>
-            <option value="千葉">千葉</option>
-            <option value="大宮">大宮</option>
-            <option value="習志野">習志野</option>
-            <option value="所沢">所沢</option>
-            <option value="野田">野田</option>
-            <option value="成田">成田</option>
-            <option value="品川">品川</option>
-            <option value="多摩">多摩</option>
-            <option value="足立">足立</option>
-            <option value="川崎">川崎</option>
-            <option value="水戸">水戸</option>
-            <option value="横浜">横浜</option>
-            <option value="八王子">八王子</option>
+</select>
 
-        </select>
+<span>年</span>
 
-    </div>
+<select id="sightingMonth">
 
+<option value="">月</option>
 
-    <!-- 分類番号 -->
+</select>
 
-    <div class="field">
+<span>月</span>
 
-        <label
-            class="field-title"
-            for="numberClass">
+<select id="sightingDay">
 
-            分類番号
-            （完全一致）
+<option value="">日</option>
 
-        </label>
+</select>
 
+<span>日</span>
 
-        <input
-            type="text"
-            id="numberClass">
+</div>
 
-    </div>
+</div>
 
 
-    <!-- 車両番号 -->
+<!-- 目撃場所 -->
 
-    <div class="field">
+<div class="field">
 
-        <label
-            class="field-title"
-            for="number">
+<label class="field-title"
+       for="sightingPlace">
 
-            車両番号
-            （完全一致）
+目撃場所（部分一致）
 
-        </label>
+</label>
 
+<input type="text"
+       id="sightingPlace">
 
-        <input
-            type="text"
-            id="number">
+</div>
 
-    </div>
 
+<!-- 所属営業所 -->
 
-    <!-- 目撃日 -->
+<div class="field">
 
-    <div class="field">
+<label class="field-title"
+       for="office">
 
-        <span class="field-title">
-            目撃日
-        </span>
+所属営業所（部分一致）
 
+</label>
 
-        <div class="date-group">
+<input type="text"
+       id="office">
 
+</div>
 
-            <select id="sightingYear">
 
-                <option value="">
-                    年
-                </option>
+<!-- ボタン -->
 
-            </select>
+<div class="button-area">
 
+<button type="button"
+        id="searchButton">
 
-            <span>年</span>
+検索
 
+</button>
 
-            <select id="sightingMonth">
+<button type="button"
+        id="clearButton">
 
-                <option value="">
-                    月
-                </option>
+条件クリア
 
-            </select>
+</button>
 
-
-            <span>月</span>
-
-
-            <select id="sightingDay">
-
-                <option value="">
-                    日
-                </option>
-
-            </select>
-
-
-            <span>日</span>
-
-
-        </div>
-
-    </div>
-
-
-    <!-- 目撃場所 -->
-<!--
-    <div class="field">
-
-        <label
-            class="field-title"
-            for="sightingPlace">
-
-            目撃場所
-            （部分一致）
-
-        </label>
-
-
-        <input
-            type="text"
-            id="sightingPlace">
-
-    </div>
--->
-
-    <!-- 所属営業所 -->
-<!--
-    <div class="field">
-
-        <label
-            class="field-title"
-            for="office">
-
-            所属営業所
-            （部分一致）
-
-        </label>
-
-
-        <input
-            type="text"
-            id="office">
-
-    </div>
--->
-
-    <!-- ボタン -->
-
-    <div class="button-area">
-
-        <button
-            type="button"
-            id="searchButton">
-
-            検索
-
-        </button>
-
-
-        <button
-            type="button"
-            id="clearButton">
-
-            条件クリア
-
-        </button>
-
-    </div>
-
+</div>
 
 </div>
 
 
 <div id="status"></div>
 
-
-<div
-    id="resultArea"
-    class="result-area">
+<div id="resultArea"
+     class="result-area">
 </div>
-
 
 
 <script>
 
 
 /*
- * ==========================================
- * Google Apps Script API
- * ==========================================
- */
+==========================================
+Google Apps Script API
+==========================================
+*/
 
 const API_URL =
-    "https://script.google.com/macros/s/AKfycbwJ5HJ2XZA2lfhkKyPtnEPAyrfugFrF2-SDRzWRZXUZYX0a9l9pBd7qYSU7EyY3S-g/exec";
-
+"https://script.google.com/macros/s/AKfycbwJ5HJ2XZA2lfhkKyPtnEPAyrfugFrF2-SDRzWRZXUZYA0l9a9l9pBd7qYSU7EyY3S-g/exec";
 
 
 /*
- * ==========================================
- * メーカー → 車種
- * ==========================================
- */
+==========================================
+メーカー → 車種
+==========================================
+*/
 
 const vehicleModels = {
 
@@ -1012,109 +784,95 @@ const vehicleModels = {
 };
 
 
-
 /*
- * ==========================================
- * メーカー変更
- * ==========================================
- */
+==========================================
+メーカー変更
+==========================================
+*/
 
 const maker =
-    document.getElementById("maker");
+document.getElementById("maker");
 
 const model =
-    document.getElementById("model");
+document.getElementById("model");
 
 
 maker.addEventListener(
-    "change",
-    function() {
+"change",
+function() {
 
-        model.innerHTML = "";
+    model.innerHTML = "";
 
+    if (!this.value) {
 
-        if (!this.value) {
+        const option =
+        document.createElement("option");
 
-            const option =
-                document.createElement("option");
+        option.value = "";
 
-            option.value = "";
+        option.textContent =
+        "先にメーカーを選択してください";
 
-            option.textContent =
-                "先にメーカーを選択してください";
+        model.appendChild(option);
 
-            model.appendChild(option);
+        model.disabled = true;
 
-            model.disabled = true;
-
-            return;
-
-        }
-
-
-        const first =
-            document.createElement("option");
-
-        first.value = "";
-
-        first.textContent =
-            "選択してください";
-
-        model.appendChild(first);
-
-
-        vehicleModels[this.value]
-            .forEach(function(name) {
-
-                const option =
-                    document.createElement("option");
-
-                option.value = name;
-
-                option.textContent = name;
-
-                model.appendChild(option);
-
-            });
-
-
-        model.disabled = false;
-
+        return;
     }
-);
 
+    const first =
+    document.createElement("option");
+
+    first.value = "";
+
+    first.textContent =
+    "選択してください";
+
+    model.appendChild(first);
+
+    vehicleModels[this.value]
+    .forEach(function(name) {
+
+        const option =
+        document.createElement("option");
+
+        option.value = name;
+
+        option.textContent = name;
+
+        model.appendChild(option);
+
+    });
+
+    model.disabled = false;
+
+});
 
 
 /*
- * ==========================================
- * 年月日
- * ==========================================
- */
+==========================================
+年月日
+==========================================
+*/
 
 const yearSelect =
-    document.getElementById(
-        "sightingYear"
-    );
+document.getElementById("sightingYear");
 
 const monthSelect =
-    document.getElementById(
-        "sightingMonth"
-    );
+document.getElementById("sightingMonth");
 
 const daySelect =
-    document.getElementById(
-        "sightingDay"
-    );
+document.getElementById("sightingDay");
 
 
 for (
-    let year = 2026;
-    year <= 2030;
-    year++
+let year = 2026;
+year <= 2030;
+year++
 ) {
 
     const option =
-        document.createElement("option");
+    document.createElement("option");
 
     option.value = year;
 
@@ -1126,13 +884,13 @@ for (
 
 
 for (
-    let month = 1;
-    month <= 12;
-    month++
+let month = 1;
+month <= 12;
+month++
 ) {
 
     const option =
-        document.createElement("option");
+    document.createElement("option");
 
     option.value = month;
 
@@ -1144,13 +902,13 @@ for (
 
 
 for (
-    let day = 1;
-    day <= 31;
-    day++
+let day = 1;
+day <= 31;
+day++
 ) {
 
     const option =
-        document.createElement("option");
+    document.createElement("option");
 
     option.value = day;
 
@@ -1161,20 +919,17 @@ for (
 }
 
 
-
 /*
- * ==========================================
- * チェックボックス取得
- * ==========================================
- */
+==========================================
+チェックボックス取得
+==========================================
+*/
 
 function getCheckedValues(name) {
 
     return Array.from(
         document.querySelectorAll(
-            'input[name="' +
-            name +
-            '"]:checked'
+            'input[name="' + name + '"]:checked'
         )
     )
     .map(function(checkbox) {
@@ -1187,34 +942,26 @@ function getCheckedValues(name) {
 }
 
 
-
 /*
- * ==========================================
- * JSONP検索
- * ==========================================
- */
+==========================================
+JSONP検索
+==========================================
+*/
 
 function searchDatabase() {
 
-
     const status =
-        document.getElementById(
-            "status"
-        );
+    document.getElementById("status");
 
     const resultArea =
-        document.getElementById(
-            "resultArea"
-        );
+    document.getElementById("resultArea");
 
     const searchButton =
-        document.getElementById(
-            "searchButton"
-        );
+    document.getElementById("searchButton");
 
 
     status.textContent =
-        "検索中...";
+    "検索中...";
 
     resultArea.innerHTML = "";
 
@@ -1222,17 +969,17 @@ function searchDatabase() {
 
 
     /*
-     * callback名
-     */
+    callback名
+    */
 
     const callbackName =
-        "vehicleSearchCallback_" +
-        Date.now();
+    "vehicleSearchCallback_" +
+    Date.now();
 
 
     /*
-     * 検索条件
-     */
+    検索条件
+    */
 
     const params = {
 
@@ -1241,196 +988,162 @@ function searchDatabase() {
         callback: callbackName,
 
         class:
-            document.getElementById(
-                "class"
-            ).value,
+        document.getElementById("class").value,
 
         maker:
-            document.getElementById(
-                "maker"
-            ).value,
+        document.getElementById("maker").value,
 
         model:
-            document.getElementById(
-                "model"
-            ).value,
+        document.getElementById("model").value,
 
         year:
-            document.getElementById(
-                "year"
-            ).value,
+        document.getElementById("year").value,
 
         transmission:
-            document.getElementById(
-                "transmission"
-            ).value,
+        document.getElementById("transmission").value,
 
         loadClass:
-            document.getElementById(
-                "loadClass"
-            ).value,
+        document.getElementById("loadClass").value,
 
         body:
-            getCheckedValues("body"),
+        getCheckedValues("body"),
 
         option:
-            getCheckedValues("option"),
+        getCheckedValues("option"),
 
         location:
-            document.getElementById(
-                "location"
-            ).value,
+        document.getElementById("location").value,
 
         numberClass:
-            document.getElementById(
-                "numberClass"
-            ).value,
+        document.getElementById("numberClass").value,
 
         number:
-            document.getElementById(
-                "number"
-            ).value,
+        document.getElementById("number").value,
 
         sightingYear:
-            yearSelect.value,
+        yearSelect.value,
 
         sightingMonth:
-            monthSelect.value,
+        monthSelect.value,
 
         sightingDay:
-            daySelect.value,
+        daySelect.value,
 
         sightingPlace:
-            document.getElementById(
-                "sightingPlace"
-            ).value,
+        document.getElementById("sightingPlace").value,
 
         office:
-            document.getElementById(
-                "office"
-            ).value
+        document.getElementById("office").value
 
     };
 
 
     /*
-     * URL作成
-     */
+    URL作成
+    */
 
-const query =
+    const query =
     new URLSearchParams(params);
 
-const script =
+
+    const script =
     document.createElement("script");
 
-script.src =
+
+    script.src =
     API_URL +
     "?" +
     query.toString();
 
-status.textContent =
-    script.src;
-
-status.textContent = script.src;
 
     /*
-     * 成功
-     */
+    成功
+    */
 
     window[callbackName] =
-        function(data) {
+    function(data) {
+
+        searchButton.disabled = false;
+
+        delete window[callbackName];
 
 
-            searchButton.disabled =
-                false;
-
-
-            delete window[
-                callbackName
-            ];
-
-
-            if (
-                !data ||
-                !data.success
-            ) {
-
-                status.textContent =
-                    "検索に失敗しました。";
-
-                return;
-
-            }
-
+        if (
+            !data ||
+            !data.success
+        ) {
 
             status.textContent =
-                data.results.length +
-                "台見つかりました。";
-
-
-            displayResults(
-                data.results
-            );
-
+            "検索に失敗しました。";
 
             script.remove();
 
-        };
+            return;
+
+        }
+
+
+        status.textContent =
+        data.results.length +
+        "台見つかりました。";
+
+
+        displayResults(
+        data.results
+        );
+
+
+        script.remove();
+
+    };
 
 
     /*
-     * エラー
-     */
+    エラー
+    */
 
     script.onerror =
-        function() {
+    function() {
 
-            searchButton.disabled =
-                false;
+        searchButton.disabled = false;
 
-            status.textContent =
-                "検索に失敗しました。";
+        status.textContent =
+        "検索に失敗しました。";
 
-            delete window[
-                callbackName
-            ];
+        delete window[callbackName];
 
-            script.remove();
+        script.remove();
 
-        };
+    };
 
 
-    document.body.appendChild(
-        script
-    );
+    /*
+    GASへ送信
+    */
+
+    document.body.appendChild(script);
 
 }
 
 
-
 /*
- * ==========================================
- * 検索結果表示
- * ==========================================
- */
+==========================================
+検索結果表示
+==========================================
+*/
 
 function displayResults(results) {
 
-
     const resultArea =
-        document.getElementById(
-            "resultArea"
-        );
+    document.getElementById("resultArea");
 
 
-    if (
-        results.length === 0
-    ) {
+    if (results.length === 0) {
 
         resultArea.innerHTML =
-            '<div class="no-result">' +
-            '該当する車両はありません。' +
-            '</div>';
+        '<div class="no-result">' +
+        '該当する車両はありません。' +
+        '</div>';
 
         return;
 
@@ -1439,9 +1152,7 @@ function displayResults(results) {
 
     let html = "";
 
-
     html += "<table>";
-
 
     html += "<thead>";
 
@@ -1459,132 +1170,94 @@ function displayResults(results) {
     html += "<th>地名</th>";
     html += "<th>分類番号</th>";
     html += "<th>車両番号</th>";
-    html += "<th>目撃履歴</th>";
-    html += "<th>所属営業所</th>";
+    html += "<th>目撃情報</th>";
     html += "<th>備考</th>";
 
     html += "</tr>";
 
     html += "</thead>";
 
-
     html += "<tbody>";
 
 
     results.forEach(
-        function(vehicle) {
+    function(vehicle) {
 
-            html += "<tr>";
+        html += "<tr>";
 
-            html +=
-                "<td>" +
-                escapeHtml(
-                    vehicle.class
-                ) +
-                "</td>";
+        html +=
+        "<td>" +
+        escapeHtml(vehicle.class) +
+        "</td>";
 
-            html +=
-                "<td>" +
-                escapeHtml(
-                    vehicle.maker
-                ) +
-                "</td>";
+        html +=
+        "<td>" +
+        escapeHtml(vehicle.maker) +
+        "</td>";
 
-            html +=
-                "<td>" +
-                escapeHtml(
-                    vehicle.model
-                ) +
-                "</td>";
+        html +=
+        "<td>" +
+        escapeHtml(vehicle.model) +
+        "</td>";
 
-            html +=
-                "<td>" +
-                escapeHtml(
-                    vehicle.year
-                ) +
-                "</td>";
+        html +=
+        "<td>" +
+        escapeHtml(vehicle.year) +
+        "</td>";
 
-            html +=
-                "<td>" +
-                escapeHtml(
-                    vehicle.transmission
-                ) +
-                "</td>";
+        html +=
+        "<td>" +
+        escapeHtml(vehicle.transmission) +
+        "</td>";
 
-            html +=
-                "<td>" +
-                escapeHtml(
-                    vehicle.loadClass
-                ) +
-                "</td>";
+        html +=
+        "<td>" +
+        escapeHtml(vehicle.loadClass) +
+        "</td>";
 
-            html +=
-                "<td>" +
-                escapeHtml(
-                    vehicle.loadDetail
-                ) +
-                "</td>";
+        html +=
+        "<td>" +
+        escapeHtml(vehicle.loadDetail) +
+        "</td>";
 
-            html +=
-                "<td>" +
-                escapeHtml(
-                    vehicle.body
-                ) +
-                "</td>";
+        html +=
+        "<td>" +
+        escapeHtml(vehicle.body) +
+        "</td>";
 
-            html +=
-                "<td>" +
-                escapeHtml(
-                    vehicle.option
-                ) +
-                "</td>";
+        html +=
+        "<td>" +
+        escapeHtml(vehicle.option) +
+        "</td>";
 
-            html +=
-                "<td>" +
-                escapeHtml(
-                    vehicle.location
-                ) +
-                "</td>";
+        html +=
+        "<td>" +
+        escapeHtml(vehicle.location) +
+        "</td>";
 
-            html +=
-                "<td>" +
-                escapeHtml(
-                    vehicle.numberClass
-                ) +
-                "</td>";
+        html +=
+        "<td>" +
+        escapeHtml(vehicle.numberClass) +
+        "</td>";
 
-            html +=
-                "<td>" +
-                escapeHtml(
-                    vehicle.number
-                ) +
-                "</td>";
+        html +=
+        "<td>" +
+        escapeHtml(vehicle.number) +
+        "</td>";
 
-            html +=
-                "<td>" +
-                escapeHtml(
-                    vehicle.sightingInfo
-                ) +
-                "</td>";
+        html +=
+        "<td>" +
+        escapeHtml(vehicle.sightingInfo) +
+        "</td>";
 
-            html +=
-                "<td>" +
-                escapeHtml(
-                    vehicle.office
-                ) +
-                "</td>";
+        html +=
+        "<td>" +
+        escapeHtml(vehicle.note) +
+        "</td>";
 
-            html +=
-                "<td>" +
-                escapeHtml(
-                    vehicle.note
-                ) +
-                "</td>";
+        html += "</tr>";
 
-            html += "</tr>";
-
-        }
-    );
+    });
 
 
     html += "</tbody>";
@@ -1593,17 +1266,16 @@ function displayResults(results) {
 
 
     resultArea.innerHTML =
-        html;
+    html;
 
 }
 
 
-
 /*
- * ==========================================
- * HTMLエスケープ
- * ==========================================
- */
+==========================================
+HTMLエスケープ
+==========================================
+*/
 
 function escapeHtml(value) {
 
@@ -1619,182 +1291,121 @@ function escapeHtml(value) {
 
     return String(value)
 
-        .replace(
-            /&/g,
-            "&amp;"
-        )
+    .replace(/&/g, "&amp;")
 
-        .replace(
-            /</g,
-            "&lt;"
-        )
+    .replace(/</g, "&lt;")
 
-        .replace(
-            />/g,
-            "&gt;"
-        )
+    .replace(/>/g, "&gt;")
 
-        .replace(
-            /"/g,
-            "&quot;"
-        )
+    .replace(/"/g, "&quot;")
 
-        .replace(
-            /'/g,
-            "&#039;"
-        );
+    .replace(/'/g, "&#039;");
 
 }
 
 
-
 /*
- * ==========================================
- * 検索ボタン
- * ==========================================
- */
+==========================================
+検索ボタン
+==========================================
+*/
 
 document
-    .getElementById(
-        "searchButton"
-    )
-    .addEventListener(
-        "click",
-        searchDatabase
-    );
-
+.getElementById("searchButton")
+.addEventListener(
+"click",
+searchDatabase
+);
 
 
 /*
- * ==========================================
- * 条件クリア
- * ==========================================
- */
+==========================================
+条件クリア
+==========================================
+*/
 
 document
-    .getElementById(
-        "clearButton"
+.getElementById("clearButton")
+.addEventListener(
+"click",
+function() {
+
+    document
+    .getElementById("class")
+    .value = "";
+
+    maker.value = "";
+
+    model.innerHTML =
+    '<option value="">' +
+    '先にメーカーを選択してください' +
+    '</option>';
+
+    model.disabled = true;
+
+    document
+    .getElementById("year")
+    .value = "";
+
+    document
+    .getElementById("transmission")
+    .value = "";
+
+    document
+    .getElementById("loadClass")
+    .value = "";
+
+    document
+    .getElementById("location")
+    .value = "";
+
+    document
+    .getElementById("numberClass")
+    .value = "";
+
+    document
+    .getElementById("number")
+    .value = "";
+
+    yearSelect.value = "";
+
+    monthSelect.value = "";
+
+    daySelect.value = "";
+
+    document
+    .getElementById("sightingPlace")
+    .value = "";
+
+    document
+    .getElementById("office")
+    .value = "";
+
+
+    document
+    .querySelectorAll(
+        'input[type="checkbox"]'
     )
-    .addEventListener(
-        "click",
-        function() {
+    .forEach(
+    function(checkbox) {
+
+        checkbox.checked = false;
+
+    });
 
 
-            document
-                .getElementById(
-                    "class"
-                )
-                .value = "";
+    document
+    .getElementById("status")
+    .textContent = "";
 
 
-            maker.value = "";
+    document
+    .getElementById("resultArea")
+    .innerHTML = "";
 
-
-            model.innerHTML =
-                '<option value="">' +
-                '先にメーカーを選択してください' +
-                '</option>';
-
-
-            model.disabled = true;
-
-
-            document
-                .getElementById(
-                    "year"
-                )
-                .value = "";
-
-
-            document
-                .getElementById(
-                    "transmission"
-                )
-                .value = "";
-
-
-            document
-                .getElementById(
-                    "loadClass"
-                )
-                .value = "";
-
-
-            document
-                .getElementById(
-                    "location"
-                )
-                .value = "";
-
-
-            document
-                .getElementById(
-                    "numberClass"
-                )
-                .value = "";
-
-
-            document
-                .getElementById(
-                    "number"
-                )
-                .value = "";
-
-
-            yearSelect.value = "";
-
-            monthSelect.value = "";
-
-            daySelect.value = "";
-
-
-            document
-                .getElementById(
-                    "sightingPlace"
-                )
-                .value = "";
-
-
-            document
-                .getElementById(
-                    "office"
-                )
-                .value = "";
-
-
-            document
-                .querySelectorAll(
-                    'input[type="checkbox"]'
-                )
-                .forEach(
-                    function(checkbox) {
-
-                        checkbox.checked =
-                            false;
-
-                    }
-                );
-
-
-            document
-                .getElementById(
-                    "status"
-                )
-                .textContent = "";
-
-
-            document
-                .getElementById(
-                    "resultArea"
-                )
-                .innerHTML = "";
-
-        }
-    );
-
+});
 
 </script>
-
 
 </body>
 
