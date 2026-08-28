@@ -1,1 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+
+    <title>車両データベース</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: #f5f5f5;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                "Hiragino Kaku Gothic ProN",
+                "Yu Gothic",
+                sans-serif;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 620px;
+        }
+
+        .header {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 30px;
+        }
+
+        .subtitle {
+            margin: 0;
+            color: #666;
+            font-size: 15px;
+        }
+
+        .menu {
+            display: grid;
+            gap: 14px;
+        }
+
+        .menu-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px 22px;
+            background: #fff;
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition:
+                transform 0.15s ease,
+                box-shadow 0.15s ease;
+        }
+
+        .menu-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .menu-description {
+            margin-top: 5px;
+            font-size: 13px;
+            color: #777;
+        }
+
+        .arrow {
+            margin-left: 15px;
+            font-size: 22px;
+        }
+
+        .footer {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #555;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                align-items: flex-start;
+                padding-top: 50px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .menu-title {
+                font-size: 18px;
+            }
+
+            .menu-link {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="header">
+            <h1>車両データベース</h1>
+            <p class="subtitle">日進レンタカー車両情報</p>
+        </header>
+
+        <nav class="menu">
+
+            <!-- 車両情報入力 -->
+            <a
+                class="menu-link"
+                href="input.html">
+
+                <div>
+                    <div class="menu-title">
+                        車両情報入力
+                    </div>
+
+                    <div class="menu-description">
+                        車両情報・目撃情報を登録
+                    </div>
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </a>
+
+
+            <!-- 車両情報検索 -->
+            <a
+                class="menu-link"
+                href="search.html">
+
+                <div>
+                    <div class="menu-title">
+                        車両情報検索
+                    </div>
+
+                    <div class="menu-description">
+                        登録された車両情報を検索
+                    </div>
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </a>
+
+
+            <!-- 日進レンタカー公式ホームページ -->
+            <a
+                class="menu-link"
+                href="https://ssl.21rentacar.com/"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <div>
+                    <div class="menu-title">
+                        日進レンタカー公式ホームページ
+                    </div>
+
+                    <div class="menu-description">
+                        日進レンタカー公式サイトを開く
+                    </div>
+                </div>
+
+                <div class="arrow">
+                    →
+                </div>
+
+            </a>
+
+        </nav>
+
+
+        <footer class="footer">
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
