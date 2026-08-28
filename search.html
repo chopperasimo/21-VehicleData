@@ -1325,11 +1325,17 @@ function searchDatabase() {
         document.createElement("script");
 
 
-    script.src =
-        API_URL +
-        "?" +
-        query.toString();
+script.src =
+    API_URL +
+    "?" +
+    query.toString();
+    
+const debug =
+    document.createElement("div");
 
+debug.textContent = script.src;
+
+document.body.prepend(debug);
 
     /*
      * 成功
