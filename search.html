@@ -876,7 +876,7 @@ th {
 
     </div>
 
-
+<!--
     <!-- 目撃場所 -->
 
     <div class="field">
@@ -917,7 +917,7 @@ th {
             id="office">
 
     </div>
-
+-->
 
     <!-- ボタン -->
 
@@ -1457,7 +1457,8 @@ function displayResults(results) {
     html += "<th>地名</th>";
     html += "<th>分類番号</th>";
     html += "<th>車両番号</th>";
-    html += "<th>目撃情報</th>";
+    html += "<th>目撃履歴</th>";
+    html += "<th>所属営業所</th>";
     html += "<th>備考</th>";
 
     html += "</tr>";
@@ -1561,6 +1562,13 @@ function displayResults(results) {
                 "<td>" +
                 escapeHtml(
                     vehicle.sightingInfo
+                ) +
+                "</td>";
+
+            html +=
+                "<td>" +
+                escapeHtml(
+                    vehicle.office
                 ) +
                 "</td>";
 
